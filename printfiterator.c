@@ -31,11 +31,14 @@ int printfiterator(const char *form, specifiers *spec, va_list args, char *b)
 					{
 			      	str = (spec[si].printspec)(args);
 				if (str == NULL)
-				  return (-1);
+					{
+						free(str);
+				    return (-1);
+					}
 				sti = 0;
 				while (str[sti] != '\0')
 				  {
-				 
+
 			       	b[bi] = str[sti];
 				sti++;
 				bi++;
