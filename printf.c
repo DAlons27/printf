@@ -12,13 +12,14 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i, j, counter = 0;
 	specifiers spec[] = {
-		{"c", printchar},
-		{"s", printstr},
-		{"d", printint},
-		{"i", printint},
-		{"b", printbin},
-		{NULL, NULL}
-	};
+	        {"c", printchar},
+                {"s", printstr},
+                {"d", printint},
+                {"i", printint},
+                {"b", printbin},
+                {NULL, NULL}
+        };
+
 
 	va_start(args, format);
 	for (i = 0; format[i] != '\0'; i++)

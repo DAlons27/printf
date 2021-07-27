@@ -13,6 +13,7 @@ typedef struct spec
 	char *s;
 	char *(*printspec)(va_list);
 } specifiers;
+specifiers *printfarray(void);
 
 int _printf(const char *format, ...);
 int printchar(va_list list);
