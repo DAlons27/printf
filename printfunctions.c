@@ -68,17 +68,22 @@ char *printint(va_list list)
 	int tensit = num;
 	char *integer;
 
-	num = num /10;
 	integer = malloc(33);
 	if (integer == NULL)
 		return (NULL);
+	if (num == 0)
+	{
+		integer[i] = 0 + '0';
+		return (integer);
+	}
+
 	if (num < 0)
 	{
-		
 		integer[i] = '-';
-		
+
 		i++;
 	}
+	num = num / 10;
 	while (num != 0)
 	{
 		num = num / 10;
