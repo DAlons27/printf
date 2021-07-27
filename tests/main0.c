@@ -77,4 +77,5 @@ int main(void)
 	_printf("%z is not a combination\n");
 	_printf("\"This is quote\"\n");
 	_printf("Spaces:[%       c]\n", 'H');
+	return (0);
 }
