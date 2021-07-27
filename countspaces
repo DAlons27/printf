@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <unistd.h>
+#include "holberton.h"
+
+/**
+ *countspaces - counts through spaces after seeing %
+ *
+ *
+ *
+ *
+ */
+int countspaces(const char *format)
+{
+
+}

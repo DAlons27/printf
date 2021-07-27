@@ -12,7 +12,7 @@
  */
 int printchar(va_list list, char *buffer, int bi)
 {
-	buffer[bi] = (va_arg(list, int) + '0');
+	buffer[bi] = (va_arg(list, int));
 	bi++;
 	return (bi);
 }
