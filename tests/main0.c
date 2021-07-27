@@ -22,6 +22,8 @@ int main(void)
 	printf("%2\n");
 	printf("%\n");
 	printf("%klarkkent\n");
+	printf("%c%c\n", 'A', 'A');
+	printf("%s%s\n", "Hello ", "World");
 	printf("%c%c%k\n", 'H', 'H');
 	printf("%c%c\n", 'H', 'H');
 	printf("%c%c\n", 'H');
@@ -57,6 +59,8 @@ int main(void)
 	_printf("%2\n");
 	_printf("%\n");
 	_printf("%klarkkent\n");
+	_printf("%c%c\n", 'A', 'A');
+	_printf("%s%s\n", "Hello ", "World");
 	_printf("%c%c%k\n", 'H', 'H');
 	_printf("%c%c\n", 'H', 'H');
 	_printf("%c%c\n", 'H');
