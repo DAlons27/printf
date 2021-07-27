@@ -14,7 +14,7 @@ typedef struct spec
 	int (*printspec)(va_list, char *, int);
 } specifiers;
 
-int printfiterator(const char *format, specifiers *spec, va_list args, char *b);
+int printfiterator(const char *form, specifiers *spec, va_list args, char *b);
 int printuint(va_list list, char *buffer, int bi);
 int _printf(const char *format, ...);
 int printchar(va_list list, char *buffer, int bi);
