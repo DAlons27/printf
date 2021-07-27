@@ -70,3 +70,23 @@ int printint(va_list list)
 	}
 	return (counter);
 }
+
+int printbin(va_list list)
+{
+	int bin[32];
+	unisgnedint i = 0;
+	unsigned int num = va_arg(list, unsigned int);
+
+		while (num != 0)
+		{
+			bin[i] = num % 2;
+			i++;
+			num /= 2;
+		}
+	for (i = i - 1; i >= 0; i--)
+	{
+		_putchar(bin[i] + '0');
+		counter++;
+	}
+	return (counter);
+}
