@@ -12,7 +12,9 @@ int main(void)
 	printf("\n");
 	printf("THE REAL PRINTF\n");
 	printf(NULL);
-	printf("%        characters\n");
+	printf("%%%%\n");
+	printf("%%%%%\n");
+	printf("%        characters\n", 'c');
 	printf("% \n");
 	printf("%    \n");
 	printf("%k\n");
@@ -45,7 +47,9 @@ int main(void)
 
 	printf("OUR PRINTF\n");
 	_printf(NULL);
-	_printf("%        characters\n");
+	_printf("%%%%\n");
+        _printf("%%%%%\n");
+	_printf("%        characters\n", 'c');
 	_printf("% \n");
 	_printf("%    \n");
 	_printf("%k\n");

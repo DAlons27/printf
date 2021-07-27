@@ -2,12 +2,14 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include "holberton.h"
+
 /**
  *printfiterator - loops through and decides which specifier to use
  *@form: the format string to be printed
  *@spec: the array of structures that identify the specifier functions
- *@args: the va__list argument list for the variadic function
+ *@args: the va_list argument list for the variadic function
  *@b: buffer to add characters to
+ *
  *Return: the number of characters printed to stdout
  */
 int printfiterator(const char *form, specifiers *spec, va_list args, char *b)
@@ -25,23 +27,25 @@ int printfiterator(const char *form, specifiers *spec, va_list args, char *b)
 		if (form[fi] == '%')
 		{
 			fi++;
-			while (form[fi] == ' ' && form != '\0')
-				fi++;
-
-			if (form[fi] != ' ')
-			    {
+			if (form[fi] == '%')
+			{
+				b[bi] = '%';
+				bi++;
+			}
+			else
 				for (si = 0; spec[si].s != NULL; si++)
 					if (*(spec[si].s) == form[fi])
 					{
 						bi = (spec[si].printspec)(args, b, bi);
 						break;
 					}
-				if (spec[si].s == NULL)
-				{
-					b[bi++] = '%';
-					b[bi++] = form[fi];
-				}
-			    }
-		    }
+		}
 		else
 		{
+			b[bi] = form[fi];
+			bi++;
+		}
+	}
+	va_end(args);
+	return (bi);
+}
