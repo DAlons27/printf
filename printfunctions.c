@@ -74,7 +74,7 @@ int printint(va_list list)
 int printbin(va_list list)
 {
 	int bin[32];
-	unsigned int i = 0;
+        int i = 0;
 	unsigned int num = va_arg(list, unsigned int);
 	int counter = 0;
 
