@@ -3,7 +3,7 @@
 #include "holberton.h"
 
 /**
- * main - Entry point
+ * main - Entry point for printf
  *
  * Return: Always 0
  */
