@@ -61,10 +61,7 @@ int printintd(va_list list)
 	}
 	while (tens != 0)
 	{
-		_putchar(tensit / tens + '0');
+		_putchar((tensit / tens) + '0');
 		tensit %= tens;
 		tens /= 10;
 		counter++;
-	}
-	return (counter);
-}

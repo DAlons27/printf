@@ -14,16 +14,9 @@ typedef struct spec
 	char *(*printspec)(va_list);
 } specifiers;
 
-int formats(const char *form, specifiers *spec, va_list args, char *b, int *bi);
-int printfbufferoverflow(char *buffer);
-char *printuint(va_list list);
 int _printf(const char *format, ...);
-char *printchar(va_list list);
-char *printstr(va_list list);
-char *printint(va_list list);
-char *printbin(va_list list);
-char *printoctal(va_list list);
-char *printhex(va_list list);
-char *printhexcaps(va_list list);
+int printchar(va_list list);
+int printstr(va_list list);
+int printintd(va_list list);
 int _putchar(char c);
 #endif
