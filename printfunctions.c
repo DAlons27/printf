@@ -121,3 +121,24 @@ int printuint(va_list list)
         }
         return (counter);
 }
+
+int printoctal(va_list list)
+{
+	int i = 0;
+	unsigned int oct[32];
+	unsigned int counter;
+	unsigned int num = va_arg(list, unsigned);
+
+	while (num != 0)
+	{
+		oct[i] = num % 8;
+		num /= 8;
+		i++;
+	}
+	for (i = i - 1; i >= 0; i--)
+	{
+		_putchar(oct[i] + '0');
+		counter++;
+	}
+	return (counter);
+}
