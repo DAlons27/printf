@@ -4,6 +4,7 @@ SYNOPSIS
 	#include "holberton.h"
 	int _printf(const char *format, ...);
 DESCRIPTION
+.SH DESCRIPTION
 The printf function creates an output of a character string in
 accordance to a specific format. If the function is successful it will
 return the number of characters printed. The format is a string of
