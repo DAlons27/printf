@@ -25,6 +25,7 @@ int _printf(const char *format, ...)
 		{"o", printoctal},
 		{"x", printhex},
 		{"X", printhexcaps},
+		/*{"%", percentsign}, */
                 {NULL, NULL}
         };
 
