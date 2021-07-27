@@ -34,6 +34,8 @@ int main(void)
 	printf("%d\n", NULL);
 	_printf("%d\n");
 	printf("%d\n");
+	_printf("%i\n");
+	printf("%i\n");
 	_printf("Unknown:[%r]\n");
 	printf("Unknown:[%r]\n");
 	_printf("%d%d\n", 5, 5);
@@ -50,11 +52,9 @@ int main(void)
 	printf("%i\n", 0);
 	_printf("%d\n", 0);
 	printf("%d\n", 0);
-	_printf("%d\n", -9);
-	printf("%d\n", -9);
-	_printf("%i\n", -9);
-        printf("%i\n", -9);
+	_printf("%i\n", -5);
+        printf("%i\n", -5);
+        _printf("%d\n", -5);
+        printf("%d\n", -5);
 	return (0);
-	
-
 }
