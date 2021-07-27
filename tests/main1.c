@@ -50,5 +50,11 @@ int main(void)
 	printf("%i\n", 0);
 	_printf("%d\n", 0);
 	printf("%d\n", 0);
+	_printf("%d\n", -9);
+	printf("%d\n", -9);
+	_printf("%i\n", -9);
+        printf("%i\n", -9);
 	return (0);
+	
+
 }

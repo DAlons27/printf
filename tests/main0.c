@@ -48,6 +48,10 @@ int main(void)
 	printf("\"This is quote\"\n");
 	printf("Spaces:[%       c]\n", 'H');
 	printf("\n");
+	printf("string: %s character: %c\n", "yay", 'S');
+	printf("%s%\n", "Hello");
+	printf("%$s\n", "hello");
+	printf("%s\n", "C", "CH");
 
 
 	printf("OUR PRINTF\n");
@@ -87,5 +91,10 @@ int main(void)
 	_printf("%k is not a combination\n");
 	_printf("\"This is quote\"\n");
 	_printf("Spaces:[%       c]\n", 'H');
+	_printf("string: %s character: %c\n", "yay", 'S');
+	_printf("%s%\n", "Hello");
+	_printf("%$s\n", "hello");
+	_printf("%s\n", "C", "CH");
+	return (0);
        
 }
