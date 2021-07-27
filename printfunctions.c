@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include <stdio.h>
 #include <stdarg.h>
 #include "holberton.h"
@@ -8,13 +9,11 @@
  *
  *Return: number of characters printed
  */
-int printchar(va_list list)
+int printchar(va_list list, char *buffer, int bi)
 {
-	int counter = 0;
-
-	_putchar(va_arg(list, int) + '0');
-	counter++;
-	return (counter);
+	buffer[bi] = (va_arg(list, int) + '0');
+	bi++;
+	return (bi);
 }
 
 /**
@@ -23,7 +22,7 @@ int printchar(va_list list)
  *
  *Return: number of characters printed
  */
-int printstr(va_list list)
+int printstr(va_list list, char *buffer, int bi)
 {
 	int i = 0;
 	char *str;
@@ -34,11 +33,11 @@ int printstr(va_list list)
 		str = "(null)";
 	while (str[i] != '\0')
 	{
-		_putchar(str[i]);
+		buffer[bi] = str[i];
 		i++;
-		counter++;
+		bi++;
 	}
-	return (counter);
+	return (bi);
 }
 
 /**
@@ -47,18 +46,18 @@ int printstr(va_list list)
  *
  *Return: number of characters printed to stdout
  */
-int printint(va_list list)
+int printint(va_list list, char *buffer, int bi)
 {
 	int tens = 1;
 	int num = va_arg(list, int);
 	int tensit = num;
-	int counter = 0;
 
 	if (num < 0)
 	{
 		num *= -1;
-		_putchar('-');
+		buffer[bi] = '-';
 		tensit *= -1;
+		bi++;
 	}
 	while (num != 0)
 	{
@@ -69,12 +68,12 @@ int printint(va_list list)
 
 	while (tens != 0)
 	{
-		_putchar((tensit / tens) + '0');
+		buffer[bi] = ((tensit / tens) + '0');
 		tensit = tensit % tens;
 		tens /= 10;
-		counter++;
+		bi++;
 	}
-	return (counter);
+	return (bi);
 }
 /**
  *printuint - prints an unsigned int
@@ -83,12 +82,11 @@ int printint(va_list list)
  *Return: number of characters printed to stdout
  */
 
-int printuint(va_list list)
+int printuint(va_list list, char *buffer, int bi)
 {
 	unsigned int tens = 1;
 	unsigned int num = va_arg(list, unsigned int);
 	unsigned int tensit = num;
-        unsigned int counter = 0;
 
         while (num != 0)
         {
@@ -98,10 +96,10 @@ int printuint(va_list list)
 	tens /= 10;
 	while (tens != 0)
 	{
-	    	_putchar((tensit / tens) + '0');
+		buffer[bi] = ((tensit / tens) + '0');
 		tensit = tensit % tens;
 		tens /= 10;
-				counter++;
+		bi++;
 	}
-	return (counter);
+	return (bi);
 }

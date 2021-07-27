@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include <stdarg.h>
 #include <stdio.h>
 #include "holberton.h"
@@ -9,37 +10,38 @@
  *
  *Return: the number of characters printed to stdout
  */
-int printfiterator(const char *format, specifiers *spec, va_list args)
+int printfiterator(const char *format, specifiers *spec, va_list args, char *b)
 {
-        int i, j, counter = 0;
+	int fi, bi = 0, si;
 
-	for (i = 0; format[i] != '\0'; i++)
+	for (fi = 0; format[fi] != '\0'; fi++)
 	{
-		if (format[i] == '\\')
+		if (format[fi] == '\\')
 		{
-			i++;
-			_putchar(format[i]);
+			fi++;
+			b[bi] = format[fi];
+			bi++;
 		}
-		if (format[i] == '%')
+		if (format[fi] == '%')
 		{
-			i++;
-			for (j = 0; spec[j].s != NULL; j++)
+			fi++;
+			for (si = 0; spec[si].s != NULL; si++)
 			{
-				if (*(spec[j].s) == format[i])
+				if (*(spec[si].s) == format[fi])
 				{
-					counter += (spec[j].printspec)(args);
+			 	bi = (spec[si].printspec)(args, b, bi);
 					break;
 				}
 			}
-			if (spec[j].s == NULL)
+			if (spec[si].s == NULL)
 				return (-1);
 		}
 		else
 		{
-			_putchar(format[i]);
-			counter++;
+			b[bi] = format[fi];
+			bi++;
 		}
 	}
 	va_end(args);
-	return (counter);
+	return (bi);
 }

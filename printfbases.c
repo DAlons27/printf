@@ -8,12 +8,11 @@
  *
  *Return: number of characters printed to stdout
  */
-int printbin(va_list list)
+int printbin(va_list list, char *buffer, int bi)
 {
 	int bin[32];
 	int i = 0;
 	unsigned int num = va_arg(list, unsigned int);
-	int counter = 0;
 
 	while (num != 0)
 	{
@@ -23,10 +22,10 @@ int printbin(va_list list)
 	}
 	for (i = i - 1; i >= 0; i--)
 	{
-		_putchar(bin[i] + '0');
-		counter++;
+		buffer[bi] = (bin[i] + '0');
+		bi++;
 	}
-	return (counter);
+	return (bi);
 }
 
 /**
@@ -35,11 +34,10 @@ int printbin(va_list list)
  *
  *Return: number of characters printed to stdout
  */
-int printoctal(va_list list)
+int printoctal(va_list list, char *buffer, int bi)
 {
 	int i = 0;
 	unsigned int oct[32];
-	unsigned int counter;
 	unsigned int num = va_arg(list, unsigned int);
 
 	while (num != 0)
@@ -50,10 +48,10 @@ int printoctal(va_list list)
 	}
 	for (i = i - 1; i >= 0; i--)
 	{
-		_putchar(oct[i] + '0');
-		counter++;
+		buffer[bi] = (oct[i] + '0');
+		bi++;
 	}
-	return (counter);
+	return (bi);
 }
 
 /**
@@ -62,12 +60,11 @@ int printoctal(va_list list)
  *
  *Return: number of characters printed to stdout
  */
-int printhex(va_list list)
+int printhex(va_list list, char *buffer, int bi)
 {
 	int i = 0;
 	unsigned int hex[32];
 	char letters[] = {'a', 'b', 'c', 'd', 'e', 'f'};
-	unsigned int counter = 0;
 	unsigned int num = va_arg(list, unsigned int);
 
 	while (num != 0)
@@ -81,10 +78,10 @@ int printhex(va_list list)
 	}
 	for (i = i - 1; i >= 0; i--)
 	{
-		_putchar(hex[i]);
-		counter++;
+		buffer[bi] = (hex[i]);
+		bi++;
 	}
-	return (counter);
+	return (bi);
 }
 
 /**
@@ -93,7 +90,7 @@ int printhex(va_list list)
  *
  *Return: number of characters printed to stdout
  */
-int printhexcaps(va_list list)
+int printhexcaps(va_list list, char *buffer, int bi)
 {
 	int i = 0;
 	unsigned int hex[32];
@@ -113,8 +110,8 @@ int printhexcaps(va_list list)
 
 	for (i = i - 1; i >= 0; i--)
 	{
-		_putchar(hex[i]);
-		counter++;
+		buffer[bi] = (hex[i]);
+		bi++;
 	}
-	return (counter);
+	return (bi);
 }
