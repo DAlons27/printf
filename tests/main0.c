@@ -12,6 +12,8 @@ int main(void)
 	printf("\n");
 	printf("THE REAL PRINTF\n");
 	printf(NULL);
+	printf("%%d\n", 5);
+	printf("");
 	printf("%%%%\n");
 	printf("%%%%%\n");
 	printf("%        characters\n", 'c');
@@ -38,10 +40,10 @@ int main(void)
 	printf("%%%\n");
 	printf("%%\n");
 	printf("%  %\n");
-	printf("%zzzzc\n");
+	printf("%kkkkc\n");
 	printf("%;;;;;;c\n");
 	printf("%%c\n", 'H');
-	printf("%z is not a combination\n");
+	printf("%k is not a combination\n");
 	printf("\"This is quote\"\n");
 	printf("Spaces:[%       c]\n", 'H');
 	printf("\n");
@@ -50,6 +52,8 @@ int main(void)
 	printf("OUR PRINTF\n");
 	_printf(NULL);
 	_printf("%%%%\n");
+	_printf("%%d\n", 5);
+	_printf("");
         _printf("%%%%%\n");
 	_printf("%        characters\n", 'c');
 	_printf("% \n");
@@ -75,10 +79,10 @@ int main(void)
 	_printf("%%%\n");
 	_printf("%%\n");
 	_printf("%  %\n");
-	_printf("%zzzzc\n");
+	_printf("%kkkkc\n");
 	_printf("%;;;;;;c\n");
 	_printf("%%c\n", 'H');
-	_printf("%z is not a combination\n");
+	_printf("%k is not a combination\n");
 	_printf("\"This is quote\"\n");
 	_printf("Spaces:[%       c]\n", 'H');
        

@@ -25,15 +25,17 @@ int _printf(const char *format, ...)
 		{"o", printoctal},
 		{"x", printhex},
 		{"X", printhexcaps},
-		/*{"%", percentsign}, */
                 {NULL, NULL}
         };
-
+	if (format == NULL)
+	  return (-1);
+	
 	buffer = malloc(1024);
 	if (buffer == NULL)
 		return (-1);
 	va_start(args, format);
 	counter = printfiterator(format, spec, args, buffer);
 	write(1, buffer, counter);
+	free(buffer);
 	return (counter);
 }
