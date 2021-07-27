@@ -70,6 +70,12 @@ int printint(va_list list)
 	}
 	return (counter);
 }
+/ * *
+ * printbin - imprime un int sin firmar como binario
+ * @ list: lista de argumentos variadic
+ *
+ * Retorno: número de caracteres impresos en la salida estándar
+ * /
 
 int printbin(va_list list)
 {
