@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
+#include <stdlib.h>
 #include "holberton.h"
 
 /**
@@ -10,24 +11,26 @@
  *
  *Return: number of characters printed to stdout
  */
-int printbin(va_list list, char *buffer, int bi)
+char *printbin(va_list list)
 {
 	int bin[32];
-	int i = 0;
+	char *binum;
+	int i = 0, j = 0;
 	unsigned int num = va_arg(list, unsigned int);
 
 	while (num != 0)
 	{
-		bin[i] = num % 2;
+		bin[i] = (num % 2);
 		i++;
 		num /= 2;
 	}
 	for (i = i - 1; i >= 0; i--)
 	{
-		buffer[bi] = (bin[i] + '0');
-		bi++;
+		binum[j] = (bin[i] + '0');
+		j++;
 	}
-	return (bi);
+	binum[j] = '\0';
+	return (binum);
 }
 
 /**
@@ -37,24 +40,29 @@ int printbin(va_list list, char *buffer, int bi)
  *@bi: buffer index
  *Return: number of characters printed to stdout
  */
-int printoctal(va_list list, char *buffer, int bi)
+char *printoctal(va_list list)
 {
-	int i = 0;
-	unsigned int oct[32];
+	int i = 0, j = 0;
+	char oct[32];
+	char *octal;
 	unsigned int num = va_arg(list, unsigned int);
 
+	octal = malloc(33);
+	if (octal == NULL)
+	    return (NULL);
 	while (num != 0)
 	{
-		oct[i] = num % 8;
+		oct[i] = (num % 8) + '0';
 		num /= 8;
 		i++;
 	}
 	for (i = i - 1; i >= 0; i--)
 	{
-		buffer[bi] = (oct[i] + '0');
-		bi++;
+		octal[j] = oct[i];
+		j++;
 	}
-	return (bi);
+	octal[j] = '\0';
+	return (octal);
 }
 
 /**
@@ -64,28 +72,34 @@ int printoctal(va_list list, char *buffer, int bi)
  *@bi: buffer index
  *Return: number of characters printed to stdout
  */
-int printhex(va_list list, char *buffer, int bi)
+char *printhex(va_list list)
 {
-	int i = 0;
-	unsigned int hex[32];
+	int i = 0, j = 0;
+	char hex[32];
+	char *hexa;
 	char letters[] = {'a', 'b', 'c', 'd', 'e', 'f'};
 	unsigned int num = va_arg(list, unsigned int);
+
+	hexa = malloc(33);
+	if (hexa == NULL)
+	    return (NULL);
 
 	while (num != 0)
 	{
 		if ((num % 16) > 9)
-			hex[i] = letters[(num % 16) % 10];
+			hex[i] = (letters[(num % 16) % 10]);
 		else
-			hex[i] = (num % 16) + '0';
+			hex[i] = (num % 16);
 		i++;
 		num = num / 16;
 	}
 	for (i = i - 1; i >= 0; i--)
 	{
-		buffer[bi] = (hex[i]);
-		bi++;
+		hexa[j] = hex[i];
+		j++;
 	}
-	return (bi);
+	hexa[j] = '\0';
+	return (hexa);
 }
 
 /**
@@ -95,18 +109,21 @@ int printhex(va_list list, char *buffer, int bi)
  *@bi: buffer index
  *Return: number of characters printed to stdout
  */
-int printhexcaps(va_list list, char *buffer, int bi)
+char *printhexcaps(va_list list)
 {
-	int i = 0;
-	unsigned int hex[32];
+	int i = 0, j = 0;
+	char hex[32];
+	char *hexa;
 	char letters[] = {'A', 'B', 'C', 'D', 'E', 'F'};
-	unsigned int counter = 0;
 	unsigned int num = va_arg(list, unsigned int);
 
+	hexa = malloc(33);
+	if (hexa == NULL)
+	    return (NULL);
 	while (num != 0)
 	{
 		if ((num % 16) > 9)
-			hex[i] = letters[(num % 16) % 10];
+			hex[i] = (letters[(num % 16) % 10]);
 		else
 			hex[i] = (num % 16) + '0';
 		i++;
@@ -115,8 +132,9 @@ int printhexcaps(va_list list, char *buffer, int bi)
 
 	for (i = i - 1; i >= 0; i--)
 	{
-		buffer[bi] = (hex[i]);
-		bi++;
+		hexa[j] = hex[i];
+		j++;
 	}
-	return (bi);
+	hexa[j] = '\0';
+	return (hexa);
 }

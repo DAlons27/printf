@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "holberton.h"
 /**
  *printfiterator - loops through and decides which specifier to use
@@ -12,7 +13,8 @@
  */
 int printfiterator(const char *form, specifiers *spec, va_list args, char *b)
 {
-	int fi, bi = 0, si;
+	int fi, bi = 0, si, sti = 0;
+	char *str;
 
 	for (fi = 0; form != NULL && form[fi] != '\0'; fi++)
 	{
@@ -33,14 +35,10 @@ int printfiterator(const char *form, specifiers *spec, va_list args, char *b)
 				for (si = 0; spec[si].s != NULL; si++)
 					if (*(spec[si].s) == form[fi])
 					{
-						bi = (spec[si].printspec)(args, b, bi);
-						break;
+						str = (spec[si].printspec)(args);
+						for (sti = 0; str[sti] != '\0'; sti++, bi++)
+							b[bi] = str[sti];
 					}
-				if (spec[si].s == NULL)
-				{
-					b[bi++] = '%';
-					b[bi++] = form[fi];
-				}
 			    }
 		    }
 		else

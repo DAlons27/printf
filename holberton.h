@@ -11,18 +11,18 @@
 typedef struct spec
 {
 	char *s;
-	int (*printspec)(va_list, char *, int);
+	char *(*printspec)(va_list);
 } specifiers;
 
 int printfiterator(const char *form, specifiers *spec, va_list args, char *b);
-int printuint(va_list list, char *buffer, int bi);
+char *printuint(va_list list);
 int _printf(const char *format, ...);
-int printchar(va_list list, char *buffer, int bi);
-int printstr(va_list list, char *buffer, int bi);
-int printint(va_list list, char *buffer, int bi);
-int printbin(va_list list, char *buffer, int bi);
-int printoctal(va_list list, char *buffer, int bi);
-int printhex(va_list list, char *buffer, int bi);
-int printhexcaps(va_list list, char *buffer, int bi);
+char *printchar(va_list list);
+char *printstr(va_list list);
+char *printint(va_list list);
+char *printbin(va_list list);
+char *printoctal(va_list list);
+char *printhex(va_list list);
+char *printhexcaps(va_list list);
 int _putchar(char c);
 #endif

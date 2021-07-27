@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "holberton.h"
 
 /**
@@ -13,7 +14,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int counter = 0;
-	char buffer[1024];
+	char *buffer;
 	specifiers spec[] = {
 		{"c", printchar},
 		{"s", printstr},
@@ -27,6 +28,9 @@ int _printf(const char *format, ...)
                 {NULL, NULL}
         };
 
+	buffer = malloc(1024);
+	if (buffer == NULL)
+		return (-1);
 	va_start(args, format);
 	counter = printfiterator(format, spec, args, buffer);
 	write(1, buffer, counter);
