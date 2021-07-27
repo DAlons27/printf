@@ -48,5 +48,9 @@ int main(void)
 	printf("%i\n", 5);
 	_printf("%s\n", NULL);
 	printf("%s\n", NULL);
+	_printf("%i\n, 0");
+	printf("%i\n, 0");
+	_printf("%d\n, 0");
+	printf("%d\n, 0");
 	return (0);
 }
