@@ -11,7 +11,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int counter = 0;
+	int i, j, counter = 0;
 	specifiers spec[] = {
 		{"c", printchar},
 		{"s", printstr},
@@ -22,10 +22,37 @@ int _printf(const char *format, ...)
 		{"o", printoctal},
 		{"x", printhex},
 		{"X", printhexcaps},
-                {NULL, NULL}
-        };
+		{NULL, NULL}
+	};
 
 	va_start(args, format);
-	counter = printfiterator(format, spec, args);
+	for (i = 0; format[i] != '\0'; i++)
+	{
+		if (format[i] == '\\')
+		{
+			i++;
+			_putchar(format[i]);
+		}
+		if (format[i] == '%')
+		{
+			i++;
+			for (j = 0; spec[j].s != NULL; j++)
+			{
+				if (*(spec[j].s) == format[i])
+				{
+					counter += (spec[j].printspec)(args);
+					break;
+				}
+			}
+			if (spec[j].s == NULL)
+				return (-1);
+		}
+		else
+		{
+			_putchar(format[i]);
+			counter++;
+		}
+	}
+	va_end(args);
 	return (counter);
 }

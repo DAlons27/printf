@@ -4,28 +4,25 @@
 /**
  *struct spec - printf specifiers
  *@s: character specifier
- *@printspec: function pointer
+ *@printspec: function pointer to a format function
  *
- *Description: structure holds a character specifier
+ *Description: structure holds a character specifier and a format function
  */
 typedef struct spec
 {
 	char *s;
-	char *(*printspec)(va_list);
+	int (*printspec)(va_list);
 } specifiers;
-specifiers *printfarray(void);
 
+int printfiterator(const char *format, specifiers *spec, va_list args);
 int printuint(va_list list);
 int _printf(const char *format, ...);
 int printchar(va_list list);
 int printstr(va_list list);
 int printint(va_list list);
 int printbin(va_list list);
-<<<<<<< HEAD
+int printoctal(va_list list);
 int printhex(va_list list);
 int printhexcaps(va_list list);
-=======
-int printoctal(va_list list);
->>>>>>> fbfe6a832cecdc36d664ab8b70dbdaf1609ba41e
 int _putchar(char c);
 #endif
