@@ -97,3 +97,27 @@ int printbin(va_list list)
 	}
 	return (counter);
 }
+
+int printuint(va_list list)
+{
+        unsigned int tens = 1;
+        unsigned int num = va_arg(list, unsigned int);
+        unsigned int tensit = num;
+        unsigned int counter = 0;
+
+        while (num != 0)
+        {
+                num = num / 10;
+                tens *= 10;
+        }
+        tens /= 10;
+
+        while (tens != 0)
+        {
+                _putchar((tensit / tens) + '0');
+                tensit = tensit % tens;
+                tens /= 10;
+                counter++;
+        }
+        return (counter);
+}

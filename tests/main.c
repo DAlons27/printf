@@ -24,5 +24,8 @@ int main(void)
 	printf("Len:[%d]\n", len2);
 	_printf("[%i]\n", 0x10);
 	_printf("[%b]\n", 13);
+	_printf("[%u]\n", -500);
+	printf("[%u]\n", -500);
+	_printf("[%u]\n", 500);
 	return (0);
 }

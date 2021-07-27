@@ -15,6 +15,7 @@ typedef struct spec
 } specifiers;
 specifiers *printfarray(void);
 
+int printuint(va_list list);
 int _printf(const char *format, ...);
 int printchar(va_list list);
 int printstr(va_list list);
