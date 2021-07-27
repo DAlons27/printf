@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 			for (j = 0; spec[j].s != NULL; j++)
 			{
 				if (*(spec[j].s) == format[i])
-				{
+				  {
 					counter += (spec[j].printspec)(args);
 					break;
 				}
