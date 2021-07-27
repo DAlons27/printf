@@ -48,7 +48,7 @@ int printintd(va_list list)
 	int tensit = num;
 	int counter = 0;
 
-	if ( num < 0)
+	if (num < 0)
 	{
 		num *= -1;
 		_putchar('-');
@@ -59,9 +59,11 @@ int printintd(va_list list)
 		num = num / 10;
 		tens *= 10;
 	}
+	tens /= 10;
+
 	while (tens != 0)
 	{
 		_putchar((tensit / tens) + '0');
-		tensit %= tens;
+		tensit = tensit % tens;
 		tens /= 10;
 		counter++;

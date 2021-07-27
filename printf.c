@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 	specifiers spec[] = {
 		{"c", printchar},
 		{"s", printstr},
-		{"i", printintd},
+		{"d", printintd},
 		{NULL, NULL}
 	};
 
