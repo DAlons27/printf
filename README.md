@@ -19,6 +19,10 @@
 * All your header files should be include guarded
 * Note that we will not provide the _putchar function for this project
 
+## _putchar
+
+* This function prints an individual character (similar to standard library putchar)
+
 ## printf
 
 * The core function where the buffer is defined and freed. All other functions are called from here
