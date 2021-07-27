@@ -23,10 +23,6 @@
 
 * This function prints an individual character (similar to standard library putchar)
 
-## printf
-
-* The core function where the buffer is defined and freed. All other functions are called from here
-
 ## holberton.h
 
 * Header file that contains prototypes for all the functions and a struct holding a function and a character
