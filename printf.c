@@ -1,12 +1,11 @@
 #include "holberton.h"
 #include <stdarg.h>
 #include <stdio.h>
-
 /**
- *_printf - prints a string
- *@format: main string passed to the function
+ *_printf - prints a string with specifiers
+ *@format: the main string passed to the function
  *
- *Return: number of total characters
+ *Return: number of total characters printed to stdout
  */
 int _printf(const char *format, ...)
 {
@@ -35,7 +34,7 @@ int _printf(const char *format, ...)
 			for (j = 0; spec[j].s != NULL; j++)
 			{
 				if (*(spec[j].s) == format[i])
-				  {
+				{
 					counter += (spec[j].printspec)(args);
 					break;
 				}
@@ -45,7 +44,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-		    			_putchar(format[i]);
+			_putchar(format[i]);
 			counter++;
 		}
 	}
