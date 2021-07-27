@@ -36,5 +36,17 @@ int main(void)
 	printf("%d\n");
 	_printf("Unknown:[%r]\n");
 	printf("Unknown:[%r]\n");
+	_printf("%d%d\n", 5, 5);
+	printf("%d%d\n", 5, 5);
+	_printf("%d%d\n", 5);
+	printf("%d%d\n", 5);
+	_printf("%d %d\n", 5, 5);
+	printf("%d %d\n", 5, 5);
+	_printf("%d       num\n", 5);
+	printf("%d       num\n", 5);
+	_printf("%i\n", 5);
+	printf("%i\n", 5);
+	_printf("%s\n", NULL);
+	printf("%s\n", NULL);
 	return (0);
 }

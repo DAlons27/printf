@@ -37,8 +37,6 @@ char *printstr(va_list list)
 	char *print;
 
 	str = va_arg(list, char *);
-	if (str == NULL)
-		str = "(null)";
 	while (str[i] != '\0')
 		i++;
 	print = malloc(i + 1);
