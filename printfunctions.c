@@ -18,6 +18,8 @@ char *printchar(va_list list)
 	if (character == NULL)
 		return (NULL);
 	character[i] = (va_arg(list, int));
+	if (character[i] == 0)
+		return (character);
 	character[i + 1] = '\0';
 	return (character);
 }

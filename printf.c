@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
         };
 	if (format == NULL)
 	  return (-1);
-	
+
 	buffer = malloc(1024);
 	if (buffer == NULL)
 		return (-1);
@@ -39,5 +39,6 @@ int _printf(const char *format, ...)
 	counter = printfiterator(format, spec, args, buffer);
 	write(1, buffer, counter);
 	free (buffer);
+	va_end(args);
 	return (counter);
 }

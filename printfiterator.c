@@ -31,10 +31,8 @@ int printfiterator(const char *form, specifiers *spec, va_list args, char *b)
 					{
 			      	str = (spec[si].printspec)(args);
 				if (str == NULL)
-					{
-						free(str);
 				    return (-1);
-					}
+
 				sti = 0;
 				while (str[sti] != '\0')
 				  {
@@ -60,6 +58,5 @@ int printfiterator(const char *form, specifiers *spec, va_list args, char *b)
 			bi++;
 		}
 	}
-	va_end(args);
 	return (bi);
 }
