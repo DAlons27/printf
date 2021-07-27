@@ -36,6 +36,6 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	counter = printfiterator(format, spec, args, buffer);
 	write(1, buffer, counter);
-	free(buffer);
+       
 	return (counter);
 }
