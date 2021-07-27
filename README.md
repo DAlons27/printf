@@ -19,9 +19,9 @@
 * All your header files should be include guarded
 * Note that we will not provide the _putchar function for this project
 
-## _putchar
+## printf
 
-* This function prints an individual character (similar to standard library putchar)
+* The core function where the buffer is defined and freed. All other functions are called from here
 
 ## holberton.h
 
@@ -30,3 +30,7 @@
 ## man_3_printf
 
 * Custom man page Create a man page for your function.
+
+### Authors
+
+* Diego Morey and Giuliano Flores
