@@ -41,7 +41,7 @@ int printstr(va_list list)
 	return (counter);
 }
 
-int printintd(va_list list)
+int printint(va_list list)
 {
 	int tens = 1;
 	int num = va_arg(list, int);
