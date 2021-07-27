@@ -4,7 +4,27 @@ SYNOPSIS
 	#include "holberton.h"
 	int _printf(const char *format, ...);
 DESCRIPTION
-The printf () function prints the output of a string or more, character or integer. The printf function can display a string in quotes. If the string has a '%', look for the next character. If it contains a c it will print a char variable, if it is an s it will print a string variable, if it is an i it will print an integer value, if it is a d it will print an integer.
-so on
+The printf function creates an output of a character string in
+	accordance to a specific format. If the function is successful it will
+	return the number of characters printed. The format is a string of
+	characters that the function prints. The function goes through each
+	character in the string and prints. When a % sign is reached and the
+	following character is a special character then a specific conversion
+	will occur. The special characters and their conversions are as follows:
+
+	c   prints a character variable
+	s   prints a string variable
+	d   prints an integer and takes an integer value as a signed decimal integer
+	i   prints an integer and takes in a decimal, hexadecimal, or octal type
+	b   prints a binary number
+	u   prints an unsigned integer
+	o   prints an octal number
+	x   prints a hexadecimal number
+	X   prints a hexadecimal number in caps
+
+
 RETURN
-	The function will returen the number of characters printed. If unsuccessful the function will return null.
+	The function will return the number of characters printed. If unsuccessful the function will return null.
+AUTHOR
+	Diego Morey and Giuliano FLores. 
+	
