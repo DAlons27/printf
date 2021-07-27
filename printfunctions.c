@@ -40,3 +40,31 @@ int printstr(va_list list)
 	}
 	return (counter);
 }
+
+int printintd(va_list list)
+{
+	int tens = 1;
+	int num = va_arg(list, int);
+	int tensit = num;
+	int counter = 0;
+
+	if ( num < 0)
+	{
+		num *= -1;
+		_putchar('-');
+		tensit *= -1;
+	}
+	while (num != 0)
+	{
+		num = num / 10;
+		tens *= 10;
+	}
+	while (tens != 0)
+	{
+		_putchar(tensit / tens + '0');
+		tensit %= tens;
+		tens /= 10;
+		counter++;
+	}
+	return (counter);
+}
