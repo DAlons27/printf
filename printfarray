@@ -1,0 +1,29 @@
+#include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
+/**
+ *printarray - initializes specifier array
+ *
+ *Return: specifiers array
+ */
+specifiers *printfarray(void)
+{
+
+	specifiers spec[] = {
+		{"c", printchar},
+		{"s", printstr},
+		{"d", printint},
+		{"i", printint},
+		{"b", printbin},
+		{NULL, NULL}
+	};
+/*	specifiers format[] = malloc(10000);
+	while (spec[i] != NULL)
+	{
+		format[i] = spec[i];
+		i++;
+	}
+	format[i] = {NULL, NULL};
+	return (format);*/
+	return (spec);
+}
