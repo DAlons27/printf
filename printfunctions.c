@@ -67,3 +67,6 @@ int printintd(va_list list)
 		tensit = tensit % tens;
 		tens /= 10;
 		counter++;
+	}
+	return (counter);
+}
