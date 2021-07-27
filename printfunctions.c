@@ -76,14 +76,13 @@ char *printint(va_list list)
 		integer[i] = 0 + '0';
 		return (integer);
 	}
-
+	num = num / 10;
 	if (num < 0)
 	{
 		integer[i] = '-';
 
 		i++;
 	}
-	num = num / 10;
 	while (num != 0)
 	{
 		num = num / 10;
