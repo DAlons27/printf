@@ -1,6 +1,6 @@
-#include "holberton.h"
 #include <stdarg.h>
 #include <stdio.h>
+#include "holberton.h"
 
 /**
  *_printf - prints a string with specifiers

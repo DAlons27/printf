@@ -1,6 +1,6 @@
-#include "holberton.h"
 #include <stdarg.h>
 #include <stdio.h>
+#include "holberton.h"
 /**
  *printfiterator - loops through and decides which specifier to use
  *@format: the format string to be printed
