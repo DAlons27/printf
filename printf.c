@@ -19,8 +19,11 @@ int _printf(const char *format, ...)
                 {"b", printbin},
 		{"u", printuint},
 		{"o", printoctal},
+<<<<<<< HEAD
 		{"x", printhex},
 		{"X", printhexcaps},
+=======
+>>>>>>> fbfe6a832cecdc36d664ab8b70dbdaf1609ba41e
                 {NULL, NULL}
         };
 

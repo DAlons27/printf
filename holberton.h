@@ -21,7 +21,11 @@ int printchar(va_list list);
 int printstr(va_list list);
 int printint(va_list list);
 int printbin(va_list list);
+<<<<<<< HEAD
 int printhex(va_list list);
 int printhexcaps(va_list list);
+=======
+int printoctal(va_list list);
+>>>>>>> fbfe6a832cecdc36d664ab8b70dbdaf1609ba41e
 int _putchar(char c);
 #endif

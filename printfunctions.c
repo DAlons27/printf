@@ -122,16 +122,25 @@ int printuint(va_list list)
         return (counter);
 }
 
+<<<<<<< HEAD
 int printhex(va_list list)
 {
 	int i = 0;
 	unsigned int hex[32];
 	char letters[] = {'a', 'b', 'c', 'd', 'e', 'f'};
 	unsigned int counter = 0;
+=======
+int printoctal(va_list list)
+{
+	int i = 0;
+	unsigned int oct[32];
+	unsigned int counter;
+>>>>>>> fbfe6a832cecdc36d664ab8b70dbdaf1609ba41e
 	unsigned int num = va_arg(list, unsigned);
 
 	while (num != 0)
 	{
+<<<<<<< HEAD
 		if ((num % 16) > 9)
 			hex[i] = letters[(num % 16) % 10];
 		else
@@ -143,10 +152,20 @@ int printhex(va_list list)
 	for (i = i - 1; i >= 0; i--)
 	{
 		_putchar(hex[i]);
+=======
+		oct[i] = num % 8;
+		num /= 8;
+		i++;
+	}
+	for (i = i - 1; i >= 0; i--)
+	{
+		_putchar(oct[i] + '0');
+>>>>>>> fbfe6a832cecdc36d664ab8b70dbdaf1609ba41e
 		counter++;
 	}
 	return (counter);
 }
+<<<<<<< HEAD
 
 int printhexcaps(va_list list)
 {
@@ -173,3 +192,5 @@ int printhexcaps(va_list list)
         }
         return (counter);
 }
+=======
+>>>>>>> fbfe6a832cecdc36d664ab8b70dbdaf1609ba41e
