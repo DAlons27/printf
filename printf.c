@@ -34,8 +34,10 @@ int _printf(const char *format, ...)
 	if (buffer == NULL)
 		return (-1);
 	va_start(args, format);
+	if (args == NULL)
+	  return (-1);
 	counter = printfiterator(format, spec, args, buffer);
 	write(1, buffer, counter);
-       
+	free (buffer);
 	return (counter);
 }

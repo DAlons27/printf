@@ -66,14 +66,15 @@ char *printint(va_list list)
 	int tensit = num;
 	char *integer;
 
+	num = num /10;
 	integer = malloc(33);
 	if (integer == NULL)
 		return (NULL);
 	if (num < 0)
 	{
-		num *= -1;
+		
 		integer[i] = '-';
-		tensit *= -1;
+		
 		i++;
 	}
 	while (num != 0)
@@ -81,11 +82,14 @@ char *printint(va_list list)
 		num = num / 10;
 		tens *= 10;
 	}
-	tens /= 10;
+	
 
 	while (tens != 0)
 	{
-		integer[i] = ((tensit / tens) + '0');
+	  if (tensit >= 0)
+	    integer[i] = (tensit / tens) + '0';
+	  else
+	    integer[i] = (-1 * (tensit / tens))+ '0';
 		tensit = tensit % tens;
 		tens /= 10;
 		i++;
