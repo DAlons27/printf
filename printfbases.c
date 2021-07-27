@@ -16,6 +16,14 @@ char *printbin(va_list list)
 	int i = 0, j = 0;
 	unsigned int num = va_arg(list, unsigned int);
 
+	binum = malloc(33);
+	if (binum == NULL)
+		return (NULL);
+	if (num == 0)
+	{
+		binum[j] = (0 + '0');
+		j++;
+	}
 	while (num != 0)
 	{
 		bin[i] = (num % 2);
