@@ -88,7 +88,7 @@ char *printint(va_list list)
 		num = num / 10;
 		tens *= 10;
 	}
-	
+
 
 	while (tens != 0)
 	{
