@@ -1,21 +1,29 @@
-#ifndef HOLBERTON_H
-#define HOLBERTON_H
-
+#ifndef HOLB_H
+#define HOLB_H
 #include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <limits.h>
+/**
+ *struct spec - printf specifiers
+ *@s: character specifier
+ *@printspec: function pointer to a format function
+ *
+ *Description: structure holds a character specifier and a format function
+ */
+typedef struct spec
+{
+	char *s;
+	char *(*printspec)(va_list);
+} specifiers;
 
-int _putchar(char c);
-int _strlen(const char *s);
+int formats(const char *form, specifiers *spec, va_list args, char *b, int *bi);
+int printfbufferoverflow(char *buffer);
+char *printuint(va_list list);
 int _printf(const char *format, ...);
-void print_number(int n);
-int ndigits(int n);
-void print_unumber(unsigned int n);
-int nudigits(unsigned int n);
-char *convert(unsigned long int num, int base);
-char *reverse(char *str);
-char *ROT13(char *str);
-
-#endif /* HOLBERTON_H */
+char *printchar(va_list list);
+char *printstr(va_list list);
+char *printint(va_list list);
+char *printbin(va_list list);
+char *printoctal(va_list list);
+char *printhex(va_list list);
+char *printhexcaps(va_list list);
+int _putchar(char c);
+#endif
