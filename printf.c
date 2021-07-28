@@ -15,8 +15,10 @@ int _printf(const char *format, ...)
 	va_list args;
 	int counter = 0;
 	char *buffer;
+	int *bi;
+	int i = 0;
 	specifiers spec[] = {
-		{"c", printchar},
+	    {"c", printchar},
 		{"s", printstr},
 		{"d", printint},
 		{"i", printint},
@@ -27,6 +29,7 @@ int _printf(const char *format, ...)
 		{"X", printhexcaps},
                 {NULL, NULL}
         };
+	bi = &i;
 	if (format == NULL)
 	  return (-1);
 
@@ -36,8 +39,8 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	if (args == NULL)
 	  return (-1);
-	counter = printfiterator(format, spec, args, buffer);
-	write(1, buffer, counter);
+	counter = format(format, spec, args, buffer, bi);
+	write(1, buffer, *bi);
 	free (buffer);
 	va_end(args);
 	return (counter);

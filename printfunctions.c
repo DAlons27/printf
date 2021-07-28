@@ -121,10 +121,10 @@ char *printuint(va_list list)
 	if (unsignedint == NULL)
 		return (NULL);
 	if (num == 0)
-	  {
-	    unsignedint[i]= 0 + '0';
-	    return (unsignedint);
-	  }
+	{
+		unsignedint[i] = 0 + '0';
+		return (unsignedint);
+	}
 	while (num != 0)
         {
 		num = num / 10;

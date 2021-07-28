@@ -4,16 +4,17 @@
 #include <stdlib.h>
 #include "holberton.h"
 /**
- *printfiterator - loops through and decides which specifier to use
+ *format - loops through and decides which specifier to use
  *@form: the format string to be printed
  *@spec: the array of structures that identify the specifier functions
  *@args: the va__list argument list for the variadic function
  *@b: buffer to add characters to
+ *@bi: buffer index
  *Return: the number of characters printed to stdout
  */
-int printfiterator(const char *form, specifiers *spec, va_list args, char *b)
+int format(const char *form, specifiers *spec, va_list args, char *b, int *bi)
 {
-	int fi, bi = 0, si, sti = 0;
+	int fi, si, sti = 0, totalcount = 0;
 	char *str;
 
 	for (fi = 0; form [fi] != '\0' ; fi++)
@@ -36,27 +37,56 @@ int printfiterator(const char *form, specifiers *spec, va_list args, char *b)
 				sti = 0;
 				while (str[sti] != '\0')
 				  {
-
-			       	b[bi] = str[sti];
-				sti++;
-				bi++;
+						b[*bi] = str[sti];
+						if (*bi == 1024)
+						{
+							totalcount += printfbufferoverflow(b);
+							*bi = 0;
+						}
+						else
+						{
+							sti++;
+							(*bi)++;
+						}
 				  }
 			free (str);
 			break;
 		    		}
 				if (spec[si].s == NULL)
 				  {
-				    b[bi++] = '%';
+				b[*bi] = '%';
+				if (*bi == 1024)
+				{
+					totalcount += printfbufferoverflow(b);
+					*bi = 0;
+				}
+				else
+					(*bi)++;
 				    if (form[fi] != '%')
-				      b[bi++] = form[fi];
-				  }
+				{
+					b[*bi] = form[fi];
+					if (*bi == 1024)
+					{
+						totalcount += printfbufferoverflow(b);
+						*bi = 0;
+					}
+					else
+						(*bi)++;
+				}
 			    }
 		    }
 		else
 		{
-		  b[bi] = form[fi];
-			bi++;
+			b[*bi] = form[fi];
+			if (*bi == 1024)
+			{
+				totalcount += printfbufferoverflow(b);
+				*bi = 0;
+			}
+			else
+				(*bi)++;
 		}
 	}
-	return (bi);
+	totalcount = totalcount + *bi;
+	return (totalcount);
 }
