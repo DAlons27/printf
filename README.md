@@ -6,34 +6,26 @@
 * No more than 5 functions per file
 * Files should end with a new line
 * No global variables allowed
-## _putchar
-* this function prints an individual character (similar to standard library putchar)
-## printf
-* The core function where the buffer is defined and freed. All other functions are called from here
-## printbin
-* This function converts a decimal number to binary
-## printoctal
-* This function converts from a decimal number to octal
-## printhex
-* This function converts decimal numbers to hexadecimal numbers and uses lowercase letters
-## printhexcaps
-* This function also converts decimal numbers to hexadecimal numbers but uses capital letters
-## printbufferoverflow
-* In the case the buffer becomes completely full and the string is not yet fully printed. This function is called and it empties the buffer
-## formats
-* loops through the specifier struct array (struct defined in dhk.h) and looks to see if the character matches the a character in the specifier array (found in printf function)
-## printchar
-* This function is called if %c is found in the string and it prints a character
-## printstr
-* This function is called if %s is found in the string and it prints a string
-## printint
-* This function is called if %i is found in the string and it prints an integer
-## printuint
-* This function is called if %u is found in the string and it prints an unsigned integer
-## dhk.h
-* Header file that contains prototypes for all the functions and a struct holding a function and a character
-## man_3_printf
-* Custom man page created for our printf function
+
+# Task
+
+* I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life
+* Education is when you read the fine print. Experience is what you get if you don't
+* Just because it's in print doesn't mean it's the gospel
+* With a face like mine, I do better in print
+* What one has not experienced, one will never understand in print
+* Nothing in fine print is ever good news
+* My weakness is wearing too much leopard print
+* How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print
+* The big print gives and the small print takes away
+* Sarcasm is lost in print
+* Print some money and give it to us for the rain forests
+* The negative is the equivalent of the composer's score, and the print the performance
+* It's depressing when you're still around and your albums are out of print
+* Every time that I wanted to give up, if I saw an interesting textile, print what ever, suddenly I would see a collection
+* Print is the sharpest and the strongest weapon of our party
+* The flood of print has turned reading into a process of gulping rather than savoring
+* /*/
 
 ### Authors
 * Diego Morey  and Giuliano Flores Mesías
