@@ -120,7 +120,11 @@ char *printuint(va_list list)
 	unsignedint = malloc(33);
 	if (unsignedint == NULL)
 		return (NULL);
-
+	if (num == 0)
+	  {
+	    unsignedint[i]= 0 + '0';
+	    return (unsignedint);
+	  }
 	while (num != 0)
         {
 		num = num / 10;

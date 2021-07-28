@@ -1,3 +1,4 @@
+
 #include <limits.h>
 #include <stdio.h>
 #include "holberton.h"
@@ -65,9 +66,9 @@ int main(void)
 	printf("%d\n", len);
 	len = printf("hex, dec, oct:[%d, %d, %d]\n", 0xf, 15, 017);
 	printf("%d\n", len);
-	len = printf("%       d\n", 3);
+	len = printf("Real: %       d\n", 3);
 	printf("%d\n", len);
-	len = _printf("%       d\n", 3);
+	len = _printf("Ours: %       d\n", 3);
 	printf("%d\n", len);
 	len = printf("%   ", 3);
 	printf("%d\n", len);
@@ -89,6 +90,15 @@ int main(void)
 	printf("%d\n", len);
 	len = _printf("abc%", 3);
 	printf("%d\n", len);
+	printf("CHECK FOR 0:\n");
+	printf("Real: %u\n", 0);
+	_printf("Ours: %u\n", 0);
+	printf("Real: %o\n", 0);
+        _printf("Ours: %o\n", 0);
+	printf("Real: %x\n", 0);
+        _printf("Ours: %x\n", 0);
+	printf("Real: %X\n", 0);
+        _printf("Ours: %X\n", 0);
 
 	/* unsigned int ui; */
 	/* void *addr; */
