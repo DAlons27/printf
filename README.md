@@ -36,4 +36,4 @@
 * Custom man page created for our printf function
 
 ### Authors
-* Diego Morey  and Giuliano Flores
+* Diego Morey  and Giuliano Flores Mesías
