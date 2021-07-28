@@ -2,12 +2,13 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
-#include "holberton.h"
+#include "dhk.h"
 
 /**
  *printchar - prints a character
  *@list: variadic list of arguments
- *Return: number of characters printed
+ *
+ *Return: number of characters printed to stdout
  */
 char *printchar(va_list list)
 {
@@ -28,7 +29,7 @@ char *printchar(va_list list)
  *printstr - prints a string
  *@list: variadic list of arguments
  *
- *Return: number of characters printed
+ *Return: number of characters printed to stdout
  */
 char *printstr(va_list list)
 {
@@ -57,9 +58,9 @@ char *printstr(va_list list)
 /**
  *printint - prints an integer
  *@list: variadic list of arguments
+ *
  *Return: number of characters printed to stdout
  */
-
 char *printint(va_list list)
 {
 	int tens = 1;
@@ -80,7 +81,6 @@ char *printint(va_list list)
 	if (tensit < 0)
 	{
 		integer[i] = '-';
-
 		i++;
 	}
 	while (num != 0)
@@ -89,13 +89,12 @@ char *printint(va_list list)
 		tens *= 10;
 	}
 
-
 	while (tens != 0)
 	{
-	  if (tensit >= 0)
-	    integer[i] = (tensit / tens) + '0';
-	  else
-	    integer[i] = (-1 * (tensit / tens))+ '0';
+		if (tensit >= 0)
+			integer[i] = (tensit / tens) + '0';
+		else
+			integer[i] = (-1 * (tensit / tens)) + '0';
 		tensit = tensit % tens;
 		tens /= 10;
 		i++;
@@ -103,12 +102,13 @@ char *printint(va_list list)
 	integer[i] = '\0';
 	return (integer);
 }
+
 /**
  *printuint - prints an unsigned int
  *@list: variadic argument list
+ *
  *Return: number of characters printed to stdout
  */
-
 char *printuint(va_list list)
 {
 	unsigned int tens = 1;
@@ -127,10 +127,11 @@ char *printuint(va_list list)
 	}
 	num = num / 10;
 	while (num != 0)
-        {
+	{
 		num = num / 10;
 		tens *= 10;
-      	}
+	}
+
 	while (tens != 0)
 	{
 		unsignedint[i] = ((tensit / tens) + '0');

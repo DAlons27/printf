@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
-#include "holberton.h"
+#include "dhk.h"
 
 /**
  *printbin - prints an unsigned int as binary
@@ -42,6 +42,7 @@ char *printbin(va_list list)
 /**
  *printoctal - converts from decimal to octal
  *@list: variadic list of arguments
+ *
  *Return: number of characters printed to stdout
  */
 char *printoctal(va_list list)
@@ -53,7 +54,7 @@ char *printoctal(va_list list)
 
 	octal = malloc(33);
 	if (octal == NULL)
-	    return (NULL);
+		return (NULL);
 	if (num == 0)
 	{
 		oct[i] = (0 + '0');
@@ -77,6 +78,7 @@ char *printoctal(va_list list)
 /**
  *printhex - converts from decimal to hexadecimal
  *@list: variadic list of arguments
+ *
  *Return: number of characters printed to stdout
  */
 char *printhex(va_list list)
@@ -89,7 +91,7 @@ char *printhex(va_list list)
 
 	hexa = malloc(33);
 	if (hexa == NULL)
-	    return (NULL);
+		return (NULL);
 	if (num == 0)
 	{
 		hex[i] = (0 + '0');
@@ -116,6 +118,7 @@ char *printhex(va_list list)
 /**
  *printhexcaps - converts from decimal to hexadecimal using capital letters
  *@list: variadic list of arguments
+ *
  *Return: number of characters printed to stdout
  */
 char *printhexcaps(va_list list)
@@ -128,12 +131,12 @@ char *printhexcaps(va_list list)
 
 	hexa = malloc(33);
 	if (hexa == NULL)
-	    return (NULL);
+		return (NULL);
 	if (num == 0)
-	  {
-	    hex[i] = (0 + '0');
-	    i++;
-	  }
+	{
+		hex[i] = (0 + '0');
+		i++;
+	}
 	while (num != 0)
 	{
 		if ((num % 16) > 9)

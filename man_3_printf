@@ -1,9 +1,9 @@
-NAME
-	printf - prints the character
-SYNOPSIS
-	#include "holberton.h"
-	int _printf(const char *format, ...);
-DESCRIPTION
+.TH man 3 "27 February 2018" "0.00" "_printf man page"
+. SH NAME
+printf - prints the character(s)
+.SH SYNOPSIS
+#include "dhk.h"
+int _printf(const char *format, ...);
 .SH DESCRIPTION
 The printf function creates an output of a character string in
 accordance to a specific format. If the function is successful it will
@@ -34,18 +34,17 @@ X   prints a hexadecimal number in caps
 .br
 .RE
 
-
-RETURN
+.SH RETURN
 The function will return the number of characters printed. If unsuccessful the function will return null.
 .SH EXAMPLES
 To print "Today is Thursday" you would do as follow, where day is a pointer to a string:
 
- #include "Holberton.h"
+ #include "DHK.h"
  _printf("Today is %s", day);
 
 To print "It is 3" you would do as follows, where time is a pointer to a integer:
 
- #include "Holberton.h"
+ #include "DHK.h"
  _printf("It is %d", time);
 AUTHOR
 	Diego Morey and Giuliano FLores.

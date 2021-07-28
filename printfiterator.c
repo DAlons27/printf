@@ -2,14 +2,16 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
+#include "dhk.h"
+
 /**
  *formats - loops through and decides which specifier to use
  *@form: the format string to be printed
  *@spec: the array of structures that identify the specifier functions
- *@args: the va__list argument list for the variadic function
+ *@args: the va_list argument list for the variadic function
  *@b: buffer to add characters to
  *@bi: buffer index
+ *
  *Return: the number of characters printed to stdout
  */
 int formats(const char *form, specifiers *spec, va_list args, char *b, int *bi)
@@ -17,26 +19,23 @@ int formats(const char *form, specifiers *spec, va_list args, char *b, int *bi)
 	int fi, si, sti = 0, totalcount = 0;
 	char *str;
 
-	for (fi = 0; form [fi] != '\0' ; fi++)
+	for (fi = 0; form[fi] != '\0'; fi++)
 	{
-
-		if (form[fi] == '%' && form[fi + 1]) != '\0')
+		if (form[fi] == '%' && form[fi + 1] != '\0')
 		{
 			fi++;
 			while (form[fi] == ' ' && form != '\0')
 				fi++;
 
-			if (form[fi] != ' ')
-			    {
-				for (si = 0; spec[si].s != NULL; si++)					if (*(spec[si].s) == form[fi])
+			for (si = 0; spec[si].s != NULL; si++)
+				if (*(spec[si].s) == form[fi])
+				{
+					str = (spec[si].printspec)(args);
+					if (str == NULL)
+						return (-1);
+					sti = 0;
+					while (str[sti] != '\0')
 					{
-			      	str = (spec[si].printspec)(args);
-				if (str == NULL)
-				    return (-1);
-
-				sti = 0;
-				while (str[sti] != '\0')
-				  {
 						b[*bi] = str[sti];
 						if (*bi == 1024)
 						{
@@ -48,12 +47,12 @@ int formats(const char *form, specifiers *spec, va_list args, char *b, int *bi)
 							sti++;
 							(*bi)++;
 						}
-				  }
-			free (str);
-			break;
-		    		}
-				if (spec[si].s == NULL)
-				  {
+					}
+					free(str);
+					break;
+				}
+			if (spec[si].s == NULL)
+			{
 				b[*bi] = '%';
 				if (*bi == 1024)
 				{
@@ -62,7 +61,7 @@ int formats(const char *form, specifiers *spec, va_list args, char *b, int *bi)
 				}
 				else
 					(*bi)++;
-				    if (form[fi] != '%')
+				if (form[fi] != '%')
 				{
 					b[*bi] = form[fi];
 					if (*bi == 1024)
@@ -73,8 +72,8 @@ int formats(const char *form, specifiers *spec, va_list args, char *b, int *bi)
 					else
 						(*bi)++;
 				}
-			    }
-		    }
+			}
+		}
 		else
 		{
 			b[*bi] = form[fi];
