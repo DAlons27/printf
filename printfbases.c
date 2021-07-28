@@ -100,7 +100,7 @@ char *printhex(va_list list)
 		if ((num % 16) > 9)
 			hex[i] = (letters[(num % 16) % 10]);
 		else
-			hex[i] = (num % 16);
+			hex[i] = (num % 16) + '0';
 		i++;
 		num = num / 16;
 	}

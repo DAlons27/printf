@@ -125,12 +125,12 @@ char *printuint(va_list list)
 		unsignedint[i] = 0 + '0';
 		return (unsignedint);
 	}
+	num = num / 10;
 	while (num != 0)
         {
 		num = num / 10;
 		tens *= 10;
       	}
-	tens /= 10;
 	while (tens != 0)
 	{
 		unsignedint[i] = ((tensit / tens) + '0');
