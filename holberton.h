@@ -14,7 +14,7 @@ typedef struct spec
 	char *(*printspec)(va_list);
 } specifiers;
 
-int format(const char *form, specifiers *spec, va_list args, char *b, int *bi);
+int formats(const char *form, specifiers *spec, va_list args, char *b, int *bi);
 int printfbufferoverflow(char *buffer);
 char *printuint(va_list list);
 int _printf(const char *format, ...);

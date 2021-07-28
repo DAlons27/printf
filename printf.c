@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	if (args == NULL)
 	  return (-1);
-	counter = format(format, spec, args, buffer, bi);
+	counter = formats(format, spec, args, buffer, bi);
 	write(1, buffer, *bi);
 	free (buffer);
 	va_end(args);
