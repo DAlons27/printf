@@ -44,10 +44,8 @@ int _printf(const char *format, ...)
 				default:
 					_putchar('%'), _putchar(*p), num += 2;
 			}
-		}
-		else
-			_putchar(*p), num++;
-	}
+		}		else
+			_putchar(*p), num++;	}
 va_end(arguments);
 return (num);
 }
